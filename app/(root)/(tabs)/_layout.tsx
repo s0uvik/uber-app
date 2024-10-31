@@ -38,7 +38,7 @@ const Layout = () => (
         paddingBottom: 0,
         overflow: "hidden",
         marginHorizontal: 20,
-        marginBottom: 20,
+        marginBottom: 10,
         height: 65,
         display: "flex",
         flexDirection: "row",
