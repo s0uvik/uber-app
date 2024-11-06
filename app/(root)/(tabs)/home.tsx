@@ -17,13 +17,14 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import { useFetch } from "@/lib/fetch";
+import { Ride } from "@/types/type";
 
 export default function Page() {
   const { setUserLocation, setDestinationLocation } = useLocationStore();
   const [hasPermission, setHasPermission] = useState(false);
   const { user } = useUser();
   const { signOut } = useAuth();
-  const { data: ride, loading } = useFetch(`/(api)/ride/${user?.id}`);
+  const { data: ride, loading } = useFetch<Ride[]>(`/(api)/ride/${user?.id}`);
 
   useEffect(() => {
     const requestLocation = async () => {
